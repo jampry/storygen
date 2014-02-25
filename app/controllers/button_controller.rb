@@ -28,6 +28,7 @@ def story
   @location_adj = location_adj.sample
   @discovery = discovery.sample
   @my_story = "In #{generate_identifier(@location_adj)} #{@location_adj} #{location_noun.sample} a young #{protagonist.sample} stumbles across #{generate_identifier(@discovery)} #{@discovery} which spurs him into conflict with #{adversary.sample} with the help of a #{assistant.sample} and her #{inventory.sample} culminating in #{conflict.sample}."
+  
 end
 
 
