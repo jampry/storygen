@@ -1,0 +1,32 @@
+body
+    {
+        background-color:#87CEEB;
+    }
+    
+h2
+    {
+        color:red;
+        text-align:center;
+        font-family:arial;
+    }
+    
+p
+    {
+        text-align:center;
+        font-family:arial;
+    }
+    
+#buttondiv
+    {
+        text-align:center;
+    }
+    
+#footer
+    {
+        position: absolute;
+        bottom: 0;
+        width: 644px;
+        height: 80px;
+        margin: 0 auto;
+        font-size: small;
+    }

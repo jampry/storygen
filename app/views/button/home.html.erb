@@ -8,8 +8,14 @@
   <body>
     <h2>Welcome to the Fiction Generator!</h2>
     <br> <br> <br>
-    <p>Click the button to randomly generate a story!</p>
-    <p><%= button_to "Generate Story", button_story_path, :class =>"button", :method => :get %></p>
+    <p>Click the button to generate a random story!</p>
+    <div id="buttondiv"><p><%= button_to "Generate Story", button_story_path, :method => :get %></p></div>
   </body>
+  
+  <div id="footer">
+  <footer>
+    <p>This fiction generator was created by Jamie Pryde for AWAD weely assignment one.</p>
+  </footer>
+  </div>
   
   </html>
