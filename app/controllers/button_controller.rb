@@ -27,7 +27,7 @@ def story
   # 'location_adj' and 'discovery' need to be separate instanced variables here. 'a or 'an' will be used correctly, and the random choices taken from the arrays will remain the same throughout each story.
   @location_adj = location_adj.sample
   @discovery = discovery.sample
-  @my_story = "In #{generate_identifier(@location_adj)} #{@location_adj} #{location_noun.sample} a young #{protagonist.sample} stumbles across #{generate_identifier(@discovery)} #{@discovery} which spurs him into conflict with #{adversary.sample} with the help of a #{assistant.sample} and her #{inventory.sample} culminating in #{conflict.sample}."
+  @my_story = "On the date #{random_date} in #{generate_identifier(@location_adj)} #{@location_adj} #{location_noun.sample}, a #{protagonist.sample} made a discovery of #{generate_identifier(@discovery)} #{@discovery} to the annoyance of his adversary; #{adversary.sample}, by the name of Bob. He and his faithful assistant - a #{assistant.sample} - set out to defeat Bob with the only thing in their inventory - #{inventory.sample} in the greatest battle ever seen #{conflict.sample}."
   
 end
 
@@ -40,6 +40,11 @@ def generate_identifier(sample)
   else
       "a"
   end
+end
+
+#Generate a random date for the story
+def random_date(from = 0.0, to = Time.now)
+  Time.at(from+rand * (to.to_f - from.to_f)).strftime("%d/%m/%y")
 end
   
 
