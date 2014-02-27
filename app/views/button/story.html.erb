@@ -3,15 +3,40 @@
     
     <head>
         <title>Your Story</title>
+        
+        <script>
+            function loadXMLDoc()
+                {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                    {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                    }
+                else
+                    {// code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                xmlhttp.onreadystatechange=function()
+                    {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                        {
+                        document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+                        }
+                    }
+                xmlhttp.open("GET","#{@my_story}",true);
+                xmlhttp.send();
+                }
+        </script>
     </head>
     
     <body>
-        <h2>This is your story!</h2>
-        <br> <br>
-        <p>Your story is called <%= @my_title %></p>
+        <div id="myDiv">
+        <h2><%= @my_title %></h2>
+        <br>
         <p><%= @my_story %></p>
-        <p><%= link_to "Generate another story!", button_story_path%></p>
+        <p><button type="button" onclick="loadXMLDoc()">Let Ajax load another story!</button></p>
         <p><%= link_to "Return Home!", button_home_path%></p>
+        </div>
     </body>
     
     </html>

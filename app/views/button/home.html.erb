@@ -9,7 +9,7 @@
     <h2>Welcome to the Fiction Generator!</h2>
     <br> <br> <br>
     <p>Click the button to randomly generate a story!</p>
-    <p><%= link_to "Generate Story", button_story_path %></p>
+    <p><%= button_to "Generate Story", button_story_path, :class =>"button", :method => :get %></p>
   </body>
   
   </html>
